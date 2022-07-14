@@ -1,0 +1,42 @@
+import java.util.*;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Map<String,Integer> map = new HashMap<>();
+		
+		//Insert key-value pair in HashMap
+		map.put("A",12);
+		map.put("B",14);
+		map.put("C",15);
+		map.put("D",12);
+		map.put("E",14);
+		map.put("C",5);
+		
+		System.out.println(map); //display entry of HashMap
+		
+		System.out.println(map.get("A")); //get() is use to get value by using key
+		
+		map.remove("A"); //Remove key-value pair using key-value
+		
+		System.out.println(map.keySet()); //this will return all the key of a HashMap
+		System.out.println(map.values()); //this will return all the values of a HashMap
+		
+		System.out.println(map.containsKey("D")); //true if key present in hashmap
+	    System.out.println(map.containsKey("T")); //false if key not present in hashmap
+	    
+	    System.out.println(map.containsValue(12)); //true if value present in hashmap
+		System.out.println(map.containsValue(10)); //false if value not present in hashmap
+		
+		// To retrive all the entry of a HashMap
+		
+		//Note: Map is interface and Entry is a nestedInterface inside Map interface 
+		// map.entrySet() will return all the (key-value) pair entry inside the Map
+		
+		for(Map.Entry<String,Integer> i : map.entrySet()){
+		    System.out.println("Key : "+i.getKey()+" Values : "+i.getValue());
+		}
+		
+		map.clear(); //to remove all entry from HashMap
+	}
+}
