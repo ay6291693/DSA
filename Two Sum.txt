@@ -39,7 +39,6 @@ public class Main
                 break;
             }
         }
-        
         System.out.println(sol[0]+" , "+sol[1]);
     }
     
