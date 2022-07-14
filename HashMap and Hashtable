@@ -23,9 +23,9 @@ public class Main
 		System.out.println(map.values()); //this will return all the values of a HashMap
 		
 		System.out.println(map.containsKey("D")); //true if key present in hashmap
-	    System.out.println(map.containsKey("T")); //false if key not present in hashmap
+	        System.out.println(map.containsKey("T")); //false if key not present in hashmap
 	    
-	    System.out.println(map.containsValue(12)); //true if value present in hashmap
+	        System.out.println(map.containsValue(12)); //true if value present in hashmap
 		System.out.println(map.containsValue(10)); //false if value not present in hashmap
 		
 		// To retrive all the entry of a HashMap
