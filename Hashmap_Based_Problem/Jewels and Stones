@@ -1,1 +1,41 @@
+#Problem Statement
+You’re given strings J representing the types of stones that are jewels, and S representing the stones you have.  Each character in S is a type of stone you have. 
+You want to know how many of the stones you have are also jewels.
+The letters in J are guaranteed distinct, and all characters in J and S are letters. Letters are case sensitive, so “a” is considered a different type of stone from “A”.
+
+import java.util.*;
+
+public class Main
+{
+    public static void JewelsAndStones(String Jewels,String Stones){
+        //HashSet is a class in Collection Framework. It use hash table for storage.
+        //HashSet store unique data elements.
+        
+        HashSet<Character> jewelSet = new HashSet<>();
+        int count=0;
+        
+        //Inserting the jewels in HashSet 
+        for(int i=0;i<Jewels.length();i++){
+            jewelSet.add(Jewels.charAt(i));
+        }
+        
+        //checking whether stone character is present inside the HashSet 
+        // if Stone character is present inside JewelSet, than the stone is jewel => count++;
+        for(int i=0;i<Stones.length();i++){
+            if(jewelSet.contains(Stones.charAt(i))){
+                count++;
+            }
+        }
+        
+        System.out.println(count);
+    }
+    
+	public static void main(String[] args) {
+	    String J = "aA"; 
+	    String S = "aaAbbabb";
+	    
+	    JewelsAndStones(J,S);
+	}
+}
+
 
