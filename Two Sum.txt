@@ -1,0 +1,52 @@
+import java.util.*;
+
+public class Main
+{
+    
+    //Brute force approach - Wild approach 
+    /*public static void twoSum(int[] nums,int target){
+        int sol[] = new int[2];
+        
+        for(int i=0; i<nums.length;i++){
+            for(int j=i+1; j<nums.length;j++){
+                if(nums[i]+nums[j] == target){
+                    sol[0] = i+1;
+                    sol[1] = j+1;
+                    break;
+                }
+            }
+        }
+        System.out.println(sol[0]+" , "+sol[1]);
+    } */
+
+    //Hashmap based solution - Optimal solution 
+    public static void twoSum(int[] nums,int target){
+        int sol[] = new int[2];
+        
+        HashMap<Integer,Integer> map = new HashMap<>();
+        
+        //Inserting array element in the HashMap
+        for(int i=0;i<nums.length;i++){
+            map.put(nums[i],i);
+        }
+        
+        for(int i=0;i<nums.length;i++){
+            int ele = target - nums[i];
+            
+            if(map.containsKey(ele)){
+                sol[0] = i + 1;
+                sol[1] = map.get(ele) + 1;
+                break;
+            }
+        }
+        
+        System.out.println(sol[0]+" , "+sol[1]);
+    }
+    
+	public static void main(String[] args) {
+	    int[] arr  = {5,4,3,2,1};
+	    int target = 5;
+	    
+	    twoSum(arr,target);
+	}
+}
