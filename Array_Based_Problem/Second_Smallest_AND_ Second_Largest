@@ -5,9 +5,8 @@ public class Main
     public static void find_min_max(int arr[],int n){
         int small=Integer.MAX_VALUE,large=Integer.MIN_VALUE,sec_small=Integer.MAX_VALUE,sec_large=Integer.MIN_VALUE;
       
-      
         for(int i=0; i<n; i++){
-            System.out.print(arr[i]+" ");
+            System.out.print(arr[i]+" ");  // for displaying the array element
             small = Math.min(small,arr[i]);
             large = Math.max(large,arr[i]);
         }
@@ -15,7 +14,6 @@ public class Main
         System.out.println("\n"+small + " "+large);
         
         for(int i=0;i<n;i++){
-            
             if(arr[i] < sec_small && arr[i] != small){
                 sec_small = arr[i];
             }else if(arr[i] > sec_large && arr[i] != large){
