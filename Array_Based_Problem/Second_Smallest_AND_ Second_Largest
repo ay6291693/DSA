@@ -1,0 +1,33 @@
+import java.util.*;
+
+public class Main
+{
+    public static void find_min_max(int arr[],int n){
+        int small=Integer.MAX_VALUE,large=Integer.MIN_VALUE,sec_small=Integer.MAX_VALUE,sec_large=Integer.MIN_VALUE;
+      
+      
+        for(int i=0; i<n; i++){
+            System.out.print(arr[i]+" ");
+            small = Math.min(small,arr[i]);
+            large = Math.max(large,arr[i]);
+        }
+        
+        System.out.println("\n"+small + " "+large);
+        
+        for(int i=0;i<n;i++){
+            
+            if(arr[i] < sec_small && arr[i] != small){
+                sec_small = arr[i];
+            }else if(arr[i] > sec_large && arr[i] != large){
+                sec_large = arr[i];
+            }
+        }
+        
+        System.out.println(sec_small+ " "+ sec_large);
+    }
+	public static void main(String[] args) {
+		int arr[] = {4,5,1,7,5,3};
+		int n = arr.length;
+		find_min_max(arr,n);
+	}
+}
